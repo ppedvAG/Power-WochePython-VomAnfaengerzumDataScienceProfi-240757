@@ -1,6 +1,6 @@
 # KURS Python Grundlagen
 
-Python Grundkurs vom 20.07.2023 bis 27.07.2023 (Teilzeit). Trainer: Lukas Kern (LukasK@ppedv.de)
+Kurs Repository zum Kurs Python - Einführung in die Programmierung der ppedv AG. Trainer: Lukas Kern (LukasK@ppedv.de)
 
 ## M01 | Grundlagen
 
