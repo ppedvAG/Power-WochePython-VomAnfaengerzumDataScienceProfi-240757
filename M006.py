@@ -137,6 +137,7 @@ print(n)
 # Übung 3
 # Schreibe eine Funktion, die eine Liste von Strings als Parameter empfängt
 # Diese Funktion soll die Strings als eine Aufzählung zusammenbauen und am Ende zurück geben
+# Dabei sollen alle Teilnehmer mit einem Komma und der letzte Teilnehmer mit einem "und" angehängt werden
 # Beispiele:
 # Parameter: []
 # Keine Parameter angegeben
