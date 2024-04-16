@@ -141,6 +141,15 @@ for i in range(10):  # Die äußere Schleife wird weniger oft ausgeführt
 # Falls sie sowohl durch 3 als auch 5 teilbar ist, soll in der Konsole "FizzBuzz" ausgegeben werden
 # Falls sie weder durch 3 noch 5 teilbar ist, soll die Zahl selbst in der Konsole ausgegeben werden
 # 1, 2, Fizz, 4, Buzz, ..., 14, FizzBuzz
+for i in range(1, 101):
+	if i % 3 == 0 and i % 5 == 0:
+		print("FizzBuzz")
+	elif i % 3 == 0:
+		print("Fizz")
+	elif i % 5 == 0:
+		print("Buzz")
+	else:
+		print(i)
 
 # Übung 2:
 # Schreibe eine Schleife die dir alle Zahlen von 1 bis 200 zur Verfügung stellt
@@ -149,11 +158,34 @@ for i in range(10):  # Die äußere Schleife wird weniger oft ausgeführt
 # Zahl + Endung 'st', 'nd', 'rd' oder 'th'
 # 1st, 2nd, 3rd, 4th, ..., 21st, 22nd, 23rd, 24th
 # Bonus: Berücksichtige alle Zahlen die mit 11, 12 oder 13 enden
+for i in range(1, 200):
+	# letztesZeichen = str(i)[-1]
+	# if letztesZeichen == "1":
+	# 	print("...")
+
+	# if i % 100 == 11 or i % 100 == 12 or i % 100 == 13:
+	if i % 100 in [11, 12, 13]:
+		print(f"{i}th")
+		continue
+
+	if i % 10 == 1:
+		print(f"{i}st")
+	elif i % 10 == 2:
+		print(f"{i}nd")
+	elif i % 10 == 3:
+		print(f"{i}rd")
+	else:
+		print(f"{i}th")
 
 # Übung 3:
 # Stoppuhr
 # Bevor die Minute hochtickt, müssen die Sekunden einmal eine vollkommene Umdrehung hinter sich gebracht haben
 # time.sleep(Float) Funktion hier nützlich
+import time
+for minute in range(0, 60):
+	for sekunde in range(0, 60):
+		print(f"{minute}:{sekunde}")
+		# time.sleep(1)
 
 # Übung 4:
 # Erstelle eine Schleife die das kleine Einmaleins von 1 bis 10 berechnet, und jeden einzelnen
@@ -166,3 +198,7 @@ for i in range(10):  # Die äußere Schleife wird weniger oft ausgeführt
 # "7 x 4 = 28"
 # ...
 # "10 x 10 = 100"
+
+for i in range(1, 11):  # Die äußere Schleife wird weniger oft ausgeführt
+	for j in range(1, 11):  # Die innere Schleife wird oft ausgeführt
+		print(f"{i} x {j} = {i * j}")
