@@ -132,6 +132,37 @@ for i in range(10):  # Die äußere Schleife wird weniger oft ausgeführt
 		print(i * j)
 	print("---------------")
 
+# Übung 1:
+# FizzBuzz
+# 1. Schleife schreiben, die von 1 bis inklusive 100 hochzählt
+# 2. Wir müssen in der Schleife jede Zahl auf ihre Teilbarkeit prüfen:
+# Falls sie durch 3 teilbar ist, soll in der Konsole "Fizz" ausgegeben werden
+# Falls sie durch 5 teilbar ist, soll in der Konsole "Buzz" ausgegeben werden
+# Falls sie sowohl durch 3 als auch 5 teilbar ist, soll in der Konsole "FizzBuzz" ausgegeben werden
+# Falls sie weder durch 3 noch 5 teilbar ist, soll die Zahl selbst in der Konsole ausgegeben werden
+# 1, 2, Fizz, 4, Buzz, ..., 14, FizzBuzz
 
+# Übung 2:
+# Schreibe eine Schleife die dir alle Zahlen von 1 bis 200 zur Verfügung stellt
+# Lass dir jede Zahl erst in der kardinalen und dann daneben in der ordinalen Schreibweise darstellen
+# Der Modulo Operator ist hier sehr nützlich
+# Zahl + Endung 'st', 'nd', 'rd' oder 'th'
+# 1st, 2nd, 3rd, 4th, ..., 21st, 22nd, 23rd, 24th
+# Bonus: Berücksichtige alle Zahlen die mit 11, 12 oder 13 enden
 
+# Übung 3:
+# Stoppuhr
+# Bevor die Minute hochtickt, müssen die Sekunden einmal eine vollkommene Umdrehung hinter sich gebracht haben
+# time.sleep(Float) Funktion hier nützlich
 
+# Übung 4:
+# Erstelle eine Schleife die das kleine Einmaleins von 1 bis 10 berechnet, und jeden einzelnen
+# Schritt in der Konsole ausgibt
+# "1 x 1 = 1"
+# "1 x 2 = 2"
+# ...
+# "5 x 5 = 25"
+# ...
+# "7 x 4 = 28"
+# ...
+# "10 x 10 = 100"
