@@ -64,12 +64,17 @@ print([buchstabe for buchstabe in text if buchstabe.isupper()])
 # Übung 1
 # Schreibe eine List-Comprehension die nur Zahlen aus einer Range von 1 bis inklusive 30 in die neue Liste packt, falls die Zahl durch 6 teilbar ist
 # Bevor die Zahl in die neue Liste gepackt wird, soll sie um 12 erhöht werden
+print([i + 12 for i in range(1, 30) if i % 6 == 0])
 
 # Übung 2
 # Schreibe eine List-Comprehension die aus einem Text alle Kleinbuchstaben nimmt und Groß in die Liste schreibt
+print([b.upper() for b in text if b.islower()])
 
 # Übung 3
 # Schreibe eine List-Comprehension die aus einem Text alle Anfangsbuchstaben nimmt
+strSplit = text.split(" ")
+print([wort[0] for wort in strSplit])
 
 # Übung 4
 # Schreibe eine List-Comprehension die aus einem Text alle Wörter nimmt die 3 oder weniger Zeichen haben
+print([wort for wort in strSplit if len(wort) <= 3])
