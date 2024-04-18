@@ -80,6 +80,21 @@ print(json.loads(jsonStr))
 # Wenn der User keine valide Möglichkeit eingibt, soll die Eingabe wiederholt werden
 # Danach soll einfach das File geöffnet werden
 # Bonus: Frage den Benutzer nach dem File, welches geöffnet werden soll
+def fileLesenSchreiben():
+	while True:
+		eingabe = input("Wähle zwischen w, r und a aus:")
+		if eingabe not in ["w", "r", "a"]:
+			continue
+
+		while True:
+			pfad = input("Gib einen Pfad ein")
+			if not os.path.exists(pfad) and eingabe == "r":
+				continue
+			else:
+				break
+
+		with open(pfad, eingabe) as file:
+			pass
 
 # Übung 2:
 # Erstelle ein Programm, das zwei Integer oder Floats abfragt
@@ -88,3 +103,52 @@ print(json.loads(jsonStr))
 # Bei Ungültiger Eingabe soll der Benutzer erneut nach seiner Entscheidung gefragt werden.
 # Lasse das Ergebnis inklusive der Berechnung in der Konsole ausgeben
 # Frage nach Ende der Operation ob der Benutzer eine neue Berechnung durchführen will
+while True:
+	z1 = input("Gib eine Zahl ein: ")
+	while True:
+		if not z1.isnumeric():
+			z1 = input("Gib eine Zahl ein: ")
+		else:
+			break
+
+	z2 = input("Gib eine Zahl ein: ")
+	while True:
+		if not z2.isnumeric():
+			z2 = input("Gib eine Zahl ein: ")
+		else:
+			break
+
+	operation = input("Gib eine Rechenoperation ein:\n1: Addition\n2: Subtraktion\n3: Multiplikation\n4: Division")
+	while True:
+		if not operation.isnumeric():
+			operation = input("Gib eine Zahl ein: ")
+		else:
+			break
+
+	z1 = int(z1)
+	z2 = int(z2)
+	operation = int(operation)
+
+	if operation == 1:
+		print(f"{z1} + {z2} = {z1 + z2}")
+	if operation == 2:
+		print(f"{z1} - {z2} = {z1 - z2}")
+	if operation == 3:
+		print(f"{z1} * {z2} = {z1 * z2}")
+	if operation == 4:
+		print(f"{z1} / {z2} = {z1 / z2}")
+
+	# Mit switch
+	# match operation:
+	# 	case 1:
+	# 		print(f"{z1} + {z2} = {z1 + z2}")
+	# 	case 2:
+	# 		print(f"{z1} - {z2} = {z1 - z2}")
+	# 	case 3:
+	# 		print(f"{z1} * {z2} = {z1 * z2}")
+	# 	case 4:
+	# 		print(f"{z1} / {z2} = {z1 / z2}")
+
+	restart = input("Wiederholen? (Y): ")
+	if restart.lower() != "y":
+		break
