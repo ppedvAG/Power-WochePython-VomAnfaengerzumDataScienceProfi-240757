@@ -127,12 +127,32 @@ print(n)
 # Übung 1:
 # Wir wollen eine Funktion erstellen, die beliebig viele Zahlen als Parameter erhalten kann
 # Und uns die größte dieser Zahlen zurückgibt
+def max(*zahlen):
+	m = zahlen[0]
+	for z in zahlen:
+		if z > m:
+			m = z
+	return m
+
+print(max(-1, -2, -3))
 
 # Übung 2:
 # Wir wollen eine Funktion erstellen, die einen String als Parameter erhält
 # Die Funktion soll dann in der Konsole ausgeben, aus wie vielen Klein- und Großbuchstaben der String besteht
 # Die Funktion soll zusätzlich zählen wie viele Sonderzeichen (Nummern inkludiert) enthalten sind und das ebenfalls ausgeben
 # Sonderzeichen: 4 | Groß: 3 | Klein: 12
+def countCase(text: str):
+	g, k, s = 0, 0, 0
+	for zeichen in text:
+		if zeichen.islower():
+			k += 1
+		elif zeichen.isupper():
+			g += 1
+		else:
+			s += 1
+	print(f'Großbuchstaben: {g}, Kleinbuchstaben: {k}, Sonderzeichen: {s}')
+
+countCase("Hallo ich bin ein Text")
 
 # Übung 3
 # Schreibe eine Funktion, die eine Liste von Strings als Parameter empfängt
@@ -147,3 +167,20 @@ print(n)
 # Teilnehmer1 und Teilnehmer2
 # Parameter: ["Teilnehmer1", "Teilnehmer2", "Teilnehmer3", "Teilnehmer4"]
 # Teilnehmer1, Teilnehmer2, Teilnehmer3 und Teilnehmer4
+def printTeilnehmer(*tn):
+	if len(tn) == 0:
+		print("Keine Teilnehmer")
+
+	if len(tn) == 1:
+		print(tn[0])
+
+	if len(tn) == 2:
+		print(f'{tn[0]} und {tn[1]}')
+
+	result = ''
+	if len(tn) > 2:
+		for i in range(0, len(tn) - 1):
+			result += tn[i] + ', '
+	print(result.rstrip(', ') + ' und ' + tn[-1])
+
+printTeilnehmer("T1", "T2", "T3", "T4")
