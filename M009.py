@@ -127,6 +127,8 @@ class Fahrzeug:
 		elif self.aktV + a < self.maxV:
 			self.aktV += a
 			print(f"Das Fahrzeug beschleunigt auf {self.aktV}km/h")
+		else:
+			raise OverflowError()
 
 	def starteMotor(self):
 		if not self.motorzustand:
