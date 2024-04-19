@@ -95,3 +95,58 @@ print(p2.x)
 p1.x = 50
 print(p1.x)
 print(p2.x)
+
+# Übung 1:
+# 1. Erstelle eine Fahrzeug-Klasse
+# 2. Diese Klasse soll typische Eigenschaften eines Fahrzeuges enthalten: (in __init__)
+#     - Fahrzeug-Name
+#     - Preis
+#     - Maximale Geschwindigkeit
+#     - Derzeitige Geschwindigkeit
+#     - Motorzustand (An/Aus)
+# 3. Die Klasse soll auch folgende Methoden enthalten:
+#     - Beschleunigen (Erhöhe bzw Verringere die Derzeitige Geschwindigkeit aber übersteige nicht das Maximum) -> Parameter int (Wieviel soll beschleunigt werden)
+#     - StarteMotor (Setze Motorzustand auf True, funktioniert nur wenn das Auto noch nicht gestartet ist)
+#     - StoppeMotor (Motor kann nur gestoppt werden, wenn das Auto nicht fährt)
+#     - Beschreibung (Gibt alle Informationen über die Klasse wieder)
+# 4. Erstelle eine Instanz der Klasse und nutze die Beschreibungs Funktion (Konkrete Werte)
+
+class Fahrzeug:
+	def __init__(self, name: str, preis: int, maxV: int):
+		self.name = name
+		self.preis = preis
+		self.maxV = maxV
+		self.aktV = 0
+		self.motorzustand = False
+
+	def beschleunigen(self, a: int):
+		if not self.motorzustand:
+			print("Motor aus")
+		elif self.aktV + a < 0:
+			print("Kann nicht unter 0km/h bremsen")
+		elif self.aktV + a < self.maxV:
+			self.aktV += a
+			print(f"Das Fahrzeug beschleunigt auf {self.aktV}km/h")
+
+	def starteMotor(self):
+		if not self.motorzustand:
+			self.motorzustand = True
+		else:
+			print("Motor ist bereits an")
+
+	def stoppeMotor(self):
+		if self.motorzustand and self.aktV == 0:
+			self.motorzustand = False
+		else:
+			print("Motor ist bereits aus, oder die Geschwindigkeit ist nicht 0")
+
+	def beschreibung(self) -> str:
+		return f"Das Fahrzeug {self.name} fährt {self.aktV}km/h und kostet {self.preis}€..."
+
+fzg = Fahrzeug("VW", 20000, 250)
+fzg.starteMotor()
+fzg.beschleunigen(50)
+fzg.stoppeMotor()
+fzg.beschleunigen(-50)
+fzg.stoppeMotor()
+print(fzg.beschreibung())
