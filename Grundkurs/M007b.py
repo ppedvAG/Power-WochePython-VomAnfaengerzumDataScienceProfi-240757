@@ -6,8 +6,7 @@ M007.countCase("Test")
 from M007 import countCase
 countCase("Test")
 
-import Test.M007c
-Test.M007c.hallo('Max')
+Grundkurs.Test.M007c.hallo('Max')
 
 # Modul Suchpfade
 # 1. Im Ordner des Ausführenden Skripts

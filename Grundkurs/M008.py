@@ -24,20 +24,20 @@ print('Das ist \n ein Umbruch')
 
 # open
 # Ermöglicht, Interaktion mit Dateien (Schreiben und Lesen)
-file = open("Test\\Test.txt", "w")
+file = open("Test/Test.txt", "w")
 file.writelines("Test1\n")
 file.writelines("Test2\n")
 file.writelines("Test3\n")
 file.flush()  # Schreibe den Inhalt des Buffers in die unterliegende Datei
 file.close()  # Streams sollten immer geschlossen werden
 
-readFile = open("Test\\Test.txt", "r")
+readFile = open("Test/Test.txt", "r")
 lines = readFile.readlines()  # Liest das gesamte File ein, jede Zeile wird zu einem Listenelement
 print(lines)
 
 # with-Statement
 # Öffnet das File, und schließt es am Ende des Blocks automatisch
-with open("Test\\Test.txt", "w") as datei:  # Name des Files steht hinter as
+with open("Test/Test.txt", "w") as datei:  # Name des Files steht hinter as
 	datei.writelines("Test2\n")
 # Hier wird automatisch Close gemacht
 
@@ -50,7 +50,7 @@ rPfad = r'C:\Users\lk3\source\repos\Python_Grundkurs_2024_04_15\venv\Scripts'
 # Verschiedene Operationen die mit der Umgebung zusammenhängen
 import os
 import os.path
-if os.path.exists("Test\\Test.txt"):
+if os.path.exists("Test/Test.txt"):
 	print("File existiert bereits")
 
 fullPath = os.path.join("Test", "Test.txt")  # Baut Pfade betriebssystemunabhängig zusammen
