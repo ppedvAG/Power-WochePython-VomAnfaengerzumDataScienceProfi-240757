@@ -34,11 +34,12 @@ class DoodleJumpGame:
 		# Update Backend Variables
 		self.currentHeight += 3 if self.jumpTicks > 0 else -3
 		self.highestHeight += 3 if self.jumpTicks > 0 and self.highestHeight < self.currentHeight else 0
-		self.jumpTicks -= 1
-		if self.nextDirection == 0 and self.playerPosX >= self.stepDistance:
-			self.playerPosX -= self.stepDistance
-		elif self.nextDirection == 1 and self.playerPosX <= self.windowWidth - self.playerDimensions[0] - self.stepDistance:
-			self.playerPosX += self.stepDistance
+		if self.jumpTicks > 0:
+			self.jumpTicks -= 1
+		# if self.nextDirection == 0 and self.playerPosX >= self.stepDistance:
+		# 	self.playerPosX -= self.stepDistance
+		# elif self.nextDirection == 1 and self.playerPosX <= self.windowWidth - self.playerDimensions[0] - self.stepDistance:
+		# 	self.playerPosX += self.stepDistance
 
 		# Check Collisions
 		for platform in self.platforms:
